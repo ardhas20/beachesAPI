@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="/api/beaches">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1>Beaches API</h1>
+<p>Visit <a href="/api/beaches">this site</a> to read the informations.</p>
