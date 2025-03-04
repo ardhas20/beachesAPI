@@ -58,6 +58,8 @@ export async function GET({ params }) {
 }
  
 export async function POST({ request }) {
+    const auth = await authenticate(request);
+    if (auth) return auth;
  
     const connection = await createConnection();
     const data = await request.json();

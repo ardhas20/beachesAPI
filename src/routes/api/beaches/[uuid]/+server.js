@@ -60,6 +60,9 @@ export async function GET({ params }) {
 }
 
 export async function PUT({ params, request }) {
+    const auth = await authenticate(request);
+    if (auth) return auth;
+
     const connection = await createConnection();
     const { uuid } = params;
     const data = await request.json();
@@ -78,7 +81,10 @@ export async function PUT({ params, request }) {
         });
 }
  
-export async function DELETE({ params }) {
+export async function DELETE({ params, request }) {
+    const auth = await authenticate(request);
+    if (auth) return auth;
+
     const { uuid } = params;
    
     try {
